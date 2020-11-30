@@ -1,0 +1,40 @@
+﻿@model IEnumerable<USWR.Models.CustomComments>
+@{
+    ViewBag.Title = "Admin Panel";
+    //Layout = null;
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Useful web-sites references</title>
+</head>
+<body>
+    <a asp-action="Index" asp-controller="Admin">К списку сайтов</a>
+    <!--<a asp-action="Comments">Просмотреть комментарии</a>-->
+    <table class="table">
+        <tr>
+            <td>Логин</td>
+            <td>Заголовок</br>сайта</td>
+            <td>Сайт</td>
+            <td>Комментарий</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>@item.Login</td>
+        <td>@item.Header</td>
+        <td><a href="@item.Link">@item.Link</a></td>
+        <td>@item.Comment</td>
+        <td>
+            <a asp-action="EditComment" asp-controller="Admin" asp-route-id="@item.Id">Изменить</a> |
+            <a asp-action="DeleteComment" asp-controller="Admin" asp-route-id="@item.Id">Удалить</a>
+        </td>
+    </tr>
+
+        }
+    </table>
+</body>
+</html>

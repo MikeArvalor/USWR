@@ -1,0 +1,32 @@
+﻿@model IEnumerable<USWR.Models.Users>
+@{
+    ViewBag.Title = "Admin Panel";
+    //Layout = null;
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Useful web-sites references</title>
+</head>
+<body>
+        <a href="http://localhost:55244/Admin/Index">Назад</a>
+    <table class="table">
+        <tr>
+            <td>Логин</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Login</td>
+                <td>
+                    <a asp-action="DeleteUser" asp-controller="Admin" asp-route-id="@item.Id">Удалить</a>
+                </td>
+            </tr>
+
+        }
+    </table>
+</body>
+</html>

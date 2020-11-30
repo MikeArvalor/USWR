@@ -1,0 +1,28 @@
+﻿@model IEnumerable<USWR.Models.CustomComments>
+@{
+    ViewBag.Title = "USWR";
+    //Layout = null;
+
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Комментарии</title>
+</head>
+<body>
+    <table class="table">
+        <tr>
+            <td>Логин</td>
+            <td>Комментарий</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Login</td>
+                <td>@item.Comment</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

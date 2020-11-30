@@ -1,0 +1,45 @@
+﻿@model IEnumerable<USWR.Models.Sites>
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Useful web-sites references</title>
+    <style>
+        form {
+            align-self: flex-start;
+        }
+    </style>
+    
+</head>
+<body>
+
+    <h3>Useful web-sites references</h3>
+    <h4>Sites</h4>
+    <table>
+        <tr>
+            <td>Header</td>
+            <td>Link</td>
+            <td>KeyWords</td>
+            <td>Description</td>
+
+        </tr>
+        @foreach (var site in ViewBag.Sites)
+        {
+    <tr>
+        <td>@site.Header</td>
+        <td>@site.Link</td>
+        <td>@site.Keywords</td>
+        <td>@site.Description</td>
+        <td><a href="~/Home/Delete/@site.Id">Delete</a></td>
+        <td><a href="~/Home/Update/@site.Id">Update</a></td>
+    </tr>
+        }
+    </table>
+    <form method="get" action="~/Home/Add"><input type="submit" value="Add Site" /></form>
+</body>
+</html>

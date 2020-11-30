@@ -1,0 +1,36 @@
+﻿@model USWR.Models.Sites
+@{
+    ViewBag.Title = "Удаление сайта";
+}
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>Заголовок</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Header)
+        </dd>
+
+        <dt>Ссылка</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Link)
+        </dd>
+
+        <dt>Ключевые слова</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Keywords)
+        </dd>
+
+        <dt>Описание</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+    </dl>
+
+    <div>
+        <form asp-controller="Admin" asp-action="Delete" method="post">
+            <div class="form-group">
+                <input type="submit" class="btn btn-default" value="Удалить" />
+            </div>
+        </form>
+    </div>
+</div>

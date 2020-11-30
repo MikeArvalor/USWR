@@ -1,0 +1,25 @@
+﻿@model USWR.Models.Sites
+@{
+    ViewBag.Title = "Добавление сайта";
+}
+    <form asp-action="create" asp-controller="admin">
+        <div class="form-group">
+            <label asp-for="Header" class="control-label">Заголовок</label>
+            <input type="text" asp-for="Header" class="form-control" required/>
+        </div>
+        <div class="form-group">
+            <label asp-for="Link" class="control-label">Ссылка</label>
+            <input type="text" asp-for="Link" class="form-control" type="url" required />
+        </div>
+        <div class="form-group">
+            <label asp-for="Keywords" class="control-label">Ключевые слова</label>
+            <input type="text" asp-for="Keywords" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="control-label">Описание</label>
+            <input type="text" asp-for="Description" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Отправить" class="btn btn-default" />
+        </div>
+    </form>

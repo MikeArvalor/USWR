@@ -1,0 +1,35 @@
+﻿@model IEnumerable<USWR.Models.CustomComments>
+@{
+    ViewBag.Title = "USWR";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Useful web-sites references</title>
+</head>
+<body>
+    <a href="http://localhost:55244/User/Index">Назад</a>
+    <table class="table">
+        <tr>
+            <td>Заголовок</td>
+            <td>Сайт</td>
+            <td>Комментарий</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Header</td>
+                <td><a href="@item.Link">@item.Link</a></td>
+                <td>@item.Comment</td>
+                <td>
+                    <a asp-action="EditComment" asp-controller="User" asp-route-id="@item.Id">Изменить</a> |
+                    <a href="/User/Delete?id=@item.Id">Удалить</a>
+                </td>
+            </tr>
+
+        }
+    </table>
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<USWR.Models.Sites>
+@{
+    ViewBag.Title = "User";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Useful web-sites references</title>
+</head>
+<body>
+
+    <h3>Useful web-sites references</h3>
+    <h4>Sites</h4>
+    <table>
+        <tr>
+            <td>Header</td>
+            <td>Link</td>
+            <td>KeyWords</td>
+            <td>Description</td>
+
+        </tr>
+      
+    </table>
+    <form method="get" action="~/Home/Add"><input type="submit" value="Add Site" /></form>
+</body>
+</html>
